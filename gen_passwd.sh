@@ -5,6 +5,6 @@ PASSWD=${PASSWORD}
 
 echo "Generating password for user ${USER_NAME}"
 
-CRYPTPASS=`openssl passwd -crypt ${PASSWD}`
+CRYPTPASS=`openssl passwd -apr1 ${PASSWD}`
 
 echo "${USER_NAME}:${CRYPTPASS}" >> /etc/nginx/.htpasswd
