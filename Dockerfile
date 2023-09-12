@@ -15,5 +15,6 @@ ENV USERNAME=$USERNAME
 ENV PASSWORD=$PASSWORD
 RUN apk add --no-cache openssl
 COPY ./gen_passwd.sh /etc/nginx/gen_passwd.sh
+RUN ["chmod", "+x", "/etc/nginx/gen_passwd.sh"]
 RUN /etc/nginx/gen_passwd.sh
 EXPOSE ${PORT}
